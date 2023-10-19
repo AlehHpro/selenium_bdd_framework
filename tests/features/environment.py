@@ -19,4 +19,5 @@ def before_all(context):
 
 
 def after_all(context):
-    context.login_page.quite()
+    # context.login_page.quit_driver()
+    context.driver.quit()

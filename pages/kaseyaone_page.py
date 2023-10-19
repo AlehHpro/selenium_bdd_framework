@@ -11,4 +11,5 @@ class KaseyaonePage(BasePage):
             self.driver.title == "KaseyaOne"
         except NoSuchElementException:
             if_kaseyaone_page_is_displayed = False
+            print(f"\n'KaseyaOne' page not found.")
         return if_kaseyaone_page_is_displayed

@@ -7,6 +7,9 @@ def get_driver(browser: str):
     elif browser.upper() == "CH_HL":
         options = webdriver.ChromeOptions()
         options.add_argument("--headless")
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-dev-shm-usage")
+        options.add_argument("--disable-setuid-sandbox")
         driver = webdriver.Chrome(options)
     else:
         raise KeyError(

@@ -49,33 +49,13 @@ class LoginPage(BasePage):
         self.click(by_locator=self.__LP_KASEYAONE_BUTTON)
 
     def check_if_alert_is_present(self):
-        if_alert_is_present = True
-        try:
-            self.get_element(by_locator=self.__LP_ALERT_MESSAGE)
-        except NoSuchElementException:
-            if_alert_is_present = False
-        return if_alert_is_present
+        return self.if_element_present(by_locator=self.__LP_ALERT_MESSAGE)
 
     def check_if_login_field_is_present(self):
-        if_login_field_is_present = True
-        try:
-            self.get_element(by_locator=self.__LP_LOGIN_FIELD)
-        except NoSuchElementException:
-            if_login_field_is_present = False
-        return if_login_field_is_present
+        return self.if_element_present(by_locator=self.__LP_LOGIN_FIELD)
 
     def check_if_password_field_is_present(self):
-        if_password_field_is_present = True
-        try:
-            self.get_element(by_locator=self.__LP_PASSWORD_FIELD)
-        except NoSuchElementException:
-            if_password_field_is_present = False
-        return if_password_field_is_present
+        return self.if_element_present(by_locator=self.__LP_PASSWORD_FIELD)
 
     def check_if_forgot_password_link_is_present(self):
-        if_forgot_password_link_is_present = True
-        try:
-            self.get_element(by_locator=self.__LP_FORGOT_PASSWORD_LINK)
-        except NoSuchElementException:
-            if_forgot_password_link_is_present = False
-        return if_forgot_password_link_is_present
+        return self.if_element_present(by_locator=self.__LP_FORGOT_PASSWORD_LINK)

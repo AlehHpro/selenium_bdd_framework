@@ -26,17 +26,7 @@ class ForgotPasswordPage(BasePage):
         self.explicitly_wait.until(expected_conditions.title_is("Account | Dark Web ID"))
 
     def check_if_forgot_password_page_is_displayed(self):
-        if_forgot_password_page_is_displayed = True
-        try:
-            self.get_element(by_locator=self.__FP_PAGE_TITLE)
-        except NoSuchElementException:
-            if_forgot_password_page_is_displayed = False
-        return if_forgot_password_page_is_displayed
+        return self.if_element_present(by_locator=self.__FP_PAGE_TITLE)
 
     def check_if_email_sent_message_is_displayed(self):
-        if_email_sent_message_is_displayed = True
-        try:
-            self.get_element(by_locator=self.__FP_EMAIL_SENT_MESSAGE)
-        except NoSuchElementException:
-            if_email_sent_message_is_displayed = False
-        return if_email_sent_message_is_displayed
+        return self.if_element_present(by_locator=self.__FP_EMAIL_SENT_MESSAGE)
